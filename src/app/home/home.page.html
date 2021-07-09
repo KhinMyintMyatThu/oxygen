@@ -1,20 +1,36 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<div class="content-container">
+  <div class="logo-container">
+    <img src="../../assets/icon/oxygen-circle-white.png" class="logo" />
   </div>
-</ion-content>
+  <div class="township-container">
+    <ion-card class="township-selector" (click)="selectTownship()">
+      <ion-item>
+        <ion-label *ngIf="!townshipName">-&nbsp;-&nbsp;&nbsp;Tap to select township&nbsp;&nbsp;-&nbsp;-</ion-label>
+        <ion-label *ngIf="townshipName">{{townshipName}}</ion-label>
+      </ion-item>
+    </ion-card>
+  </div>
+  <div class="main-container">
+    <h3>Oxygen stations</h3>
+    <div *ngIf="!loading" class="scroll">
+        <ion-list *ngFor="let station of stationLists">
+          <ion-item>
+            <ion-label>
+              {{station.name}}
+            </ion-label>
+            <ion-icon name="call" slot="end" (click)="selectPhone(station.phone)" color="primary"></ion-icon>
+          </ion-item>
+        </ion-list>
+    </div>
+    <div *ngIf="loading">
+      <ion-list *ngFor="let station of stationLists">
+        <ion-item>
+          <ion-label>
+            <ion-skeleton-text animated></ion-skeleton-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+</div>

@@ -24,3 +24,37 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+.searchbar-input.sc-ion-searchbar-md {
+    // box-shadow        : none !important;
+    // -moz-box-shadow   : none !important;
+    // -webkit-box-shadow: none !important;
+    border-radius     : 50px;
+    font-size         : 16px;
+    white-space       : nowrap;
+    overflow          : hidden;
+    text-overflow     : ellipsis;
+    padding-inline-end: 30px !important;
+  }
+
+  ion-searchbar {
+    input {
+      border-radius: 30px !important;
+      border       : 1px solid #e8e8e8 !important;
+      font-size    : 15px !important;
+    }
+  }
+
+  .township-modal .modal-wrapper {
+    width                  : 90%;
+    height                 : 55%;
+    --border-radius: 20px !important;
+    display                : block;
+  }
+
+  .phone-modal .modal-wrapper {
+    width                  : 70%;
+    height                 : 25%;
+    --border-radius: 20px !important;
+    display                : block;
+  }

@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'township-modal',
+    loadChildren: () => import('./township-modal/township-modal.module').then( m => m.TownshipModalPageModule)
+  },
+  {
+    path: 'phone-modal',
+    loadChildren: () => import('./phone-modal/phone-modal.module').then( m => m.PhoneModalPageModule)
+  },
 ];
 
 @NgModule({

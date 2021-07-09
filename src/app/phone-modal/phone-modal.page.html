@@ -1,0 +1,7 @@
+<ion-content>
+  <ion-list *ngFor="let num of phNums; let i=index;">
+    <ion-item (click)="choosePhone(num)" class="item">
+      <ion-label>{{num}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+<ion-content>
+    <ion-list *ngFor="let township of townshipLists; let i=index;">
+      <ion-item (click)="chooseTownship(township)" class="item">
+        <ion-label>{{township.name}}</ion-label>
+      </ion-item>
+    </ion-list>
+</ion-content>
